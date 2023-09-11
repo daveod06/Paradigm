@@ -90,6 +90,9 @@ if (_placingAllowed) then {
 if (_placingAllowed && !isNil "_buildingConfig") then {
 	private _results = 
 		[configName _buildingConfig, "canPlaceBuilding", [_buildingConfig, _object]] call para_g_fnc_building_class_fire_feature_event;
+
+	if (isNil "_results") exitWith {};
+
 	private _firstUnplacableFeatureIndex = _results findIf {!(_x # 0)};
 
 	if (_firstUnplacableFeatureIndex == -1) exitWith {};

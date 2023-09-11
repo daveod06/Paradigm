@@ -40,4 +40,4 @@ para_l_buildings = [];
 para_s_bf_wreck_recovery_buildings = [];
 
 //Load any saved bases.
-[] call para_s_fnc_basebuilding_load;
+//[] call para_s_fnc_basebuilding_load; // DJO - commented
