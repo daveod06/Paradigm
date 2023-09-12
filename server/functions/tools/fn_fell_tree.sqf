@@ -26,7 +26,23 @@ if (isNil "para_s_tools_chopped_trees") then {para_s_tools_chopped_trees = []};
 
 if (!([_hitObject] call para_g_fnc_is_valid_axe_target)) exitWith {};
 
-hideObjectGlobal _hitObject;
+private _deadTrees = missionNamespace getVariable ["deadTrees",[]];
+_deadTrees pushBackUnique _hitObject;
+missionNamespace setVariable ["deadTrees",_deadTrees];
+
+[_hitObject] spawn
+{
+    params ["_hitObject"];
+    _hitObject setDamage 1;
+
+    /*
+    private _trees = nearestTerrainObjects [getPos _hitObject, ["TREE","SMALL TREE"], 1,false,true];
+    if (!(_hitObject in _trees)) then
+    {
+        _hitObject hideObjectGlobal true;
+    };
+    */
+};
 
 para_s_tools_chopped_trees pushBack _hitPosAGL;
 ["SET", "chopped_trees", [para_s_tools_chopped_trees]] call para_s_fnc_profile_db;

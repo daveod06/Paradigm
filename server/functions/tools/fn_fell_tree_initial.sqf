@@ -16,7 +16,7 @@
 
 params ["_hitPos"];
 
-private _hitObject = (nearestTerrainObjects [_hitPos, [], 1,false,true]) select 0;
+private _hitObject = (nearestTerrainObjects [_hitPos, ["TREE","SMALL TREE","BUSH","HIDE"], 1,false,true]) select 0;
 
 if (!isNil "_hitObject") then {
     [_hitObject, _hitPos] call para_s_fnc_fell_tree;
