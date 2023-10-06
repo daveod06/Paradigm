@@ -1,5 +1,5 @@
 /*
-    File: fn_master_loop_init.sqf
+    File: fn_compiled_loop_init.sqf
     Author:  Savage Game Design
     Public: No
 

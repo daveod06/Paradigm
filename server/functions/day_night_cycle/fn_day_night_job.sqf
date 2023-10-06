@@ -21,10 +21,14 @@ private _minute = date select 4;
 //Bit of a weird one - we're making a number in the format [0-9].[0-6][0-9], because it's easier to read.
 //For example, 17.40 is 5:40pm. 18.15 is 6:15pm.
 private _time = _hour + (_minute / 100);
-private _isDawn = _time >= 5.15 && _time < 6;
-private _isDay = _time >= 6 && _time < 17.15;
-private _isDusk = _time >= 17.15 && _time < 18;
-private _isNight = _time >= 18 || _time < 5.15;
+
+// 0=day, 1=dusk, 2=night, 3=dawn
+private _timeOfDay = call Saber_fnc_isDayNightDawnDusk;
+
+private _isDawn = (_timeOfDay == 3);
+private _isDay = (_timeOfDay == 0);
+private _isDusk = (_timeOfDay == 1);
+private _isNight = (_timeOfDay == 2);
 
 if (_isDawn && timeMultiplier != para_s_day_night_dawnSpeedMultiplier) exitWith {
 	setTimeMultiplier para_s_day_night_dawnSpeedMultiplier;
