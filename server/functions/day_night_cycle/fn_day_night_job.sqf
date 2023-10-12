@@ -48,6 +48,6 @@ if (_isDusk && timeMultiplier != para_s_day_night_duskSpeedMultiplier) exitWith 
 if (_isNight && timeMultiplier != para_s_day_night_nightSpeedMultiplier) exitWith {
 	setTimeMultiplier para_s_day_night_nightSpeedMultiplier;
 	missionNamespace setVariable ["para_s_time_of_day", "Night", true];
-	[60, 0] remoteExec ["setOvercast", 0];
+	//[60, 0] remoteExec ["setOvercast", 0];
 };
 
