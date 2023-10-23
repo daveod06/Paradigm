@@ -23,11 +23,13 @@ if (getNumber (missionConfigFile >> "use_paradigm_init") <= 0) exitWith {};
 //Spawn so we don't hold up the postInit process.
 [] spawn {
 	private _fnc_initServer = compile preprocessFile "para_server_init.sqf";
+	private _fnc_serverCode =  compile preprocessFile "serverCode.sqf";
 	diag_log "Paradigm: Server detected. Waiting for initFunctions before beginning init.";
 	waitUntil {uiSleep 0.2;	missionNamespace getVariable ["bis_fnc_init", false]};
 	diag_log "Paradigm: initFunctions completed, beginning init.";
 	private _startTime = diag_tickTime;
 	[] call _fnc_initServer;
+	[] call _fnc_serverCode;
 	diag_log format ["Paradigm: Serverside initialisation completed in %1 seconds", (diag_tickTime - _startTime) toFixed 1];
 	para_server_init_completed = true;
 	publicVariable "para_server_init_completed";
