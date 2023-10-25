@@ -22,6 +22,8 @@ params ["_buildingClass", "_eventName", "_arguments"];
 
 private _featureConfigs = [_buildingClass] call para_g_fnc_building_class_get_feature_configs;
 
+diag_log format ["fn_building_class_fire_feature_event _this: %1 _featureConfigs: %2",_this,_featureConfigs];
+
 _featureConfigs apply {
 	_arguments call (missionNamespace getVariable [getText (_x >> _eventName), {}]);
 }

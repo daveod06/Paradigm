@@ -1,11 +1,11 @@
 /*
-    File: fn_bf_respawn_on_nonfunctional.sqf
+    File: fn_bf_radio_on_nonfunctional.sqf
     Author:  Savage Game Design
     Public: No
     
     Description:
-        Called when a respawn building stops functioning.
-        Disables the respawn point.
+        Called when a radio building stops functioning.
+        Disables the radio point.
     
     Parameter(s):
         _building - Building that stopped being functional. [OBJECT]

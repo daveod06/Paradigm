@@ -52,6 +52,7 @@ class CfgBuildingFeatures
 
 	class respawn
 	{
+		canPlaceBuilding = "para_g_fnc_bf_veh_spawn_can_place_building";
 		onBuildingFunctional = "para_s_fnc_bf_respawn_on_functional";
 		onBuildingNonFunctional = "para_s_fnc_bf_respawn_on_nonfunctional";
 		onSuppliesChanged = "para_s_fnc_bf_respawn_on_supplies_changed";

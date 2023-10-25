@@ -1,11 +1,11 @@
 /*
-	File: fn_bf_respawn_on_functional.sqf
+	File: fn_bf_radio_on_functional.sqf
 	Author:  Savage Game Design
 	Public: No
 	
 	Description:
-	  Called when a respawn building starts functioning.
-	  Enables it as a respawn point.
+	  Called when a radio building starts functioning.
+	  Enables it as a radio point.
 	
 	Parameter(s):
 		_building - Building that became functional [OBJECT]
