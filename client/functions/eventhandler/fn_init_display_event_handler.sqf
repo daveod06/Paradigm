@@ -28,7 +28,7 @@ if !(isNull _display) then
 			} forEach _files;
 			private _id = _display displayAddEventHandler [_name,_cmd];
 		} else {
-			private _file = preprocessFile format["eventhandlers\display\eh_%1.sqf",_name];
+			private _file = preprocessFile format["coreFunctions\eventhandlers\display\eh_%1.sqf",_name];
 			private _id = _display displayAddEventHandler [_name,_file];
 		};
 	} forEach (configProperties [missionConfigFile >> "gamemode" >> "displayEventHandler"]);

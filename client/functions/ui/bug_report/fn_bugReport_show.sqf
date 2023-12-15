@@ -41,7 +41,7 @@
 		call para_c_fnc_bugReport_show;
 */
 
-// call compile preprocessFileLineNumbers "paradigm\Client\functions\ui\bug_report\fn_bugReport_show.sqf"
+// call compile preprocessFileLineNumbers "paradigm\Client\coreFunctions\ui\bug_report\fn_bugReport_show.sqf"
 // #include "\a3\ui_f\hpp\definedikcodes.inc"
 // #include "..\..\..\configs\ui\ui_def_base.inc"
 // #define para_RscDisplayBuildingMenu_headerHeight (UIH(1))

@@ -25,7 +25,7 @@
 		} forEach _files;
 		private _id = player addEventHandler [_name,_cmd];
 	} else {
-		private _file = preprocessFile format["eventhandlers\player\eh_%1.sqf",_name];
+		private _file = preprocessFile format["coreFunctions\eventhandlers\player\eh_%1.sqf",_name];
 		private _id = player addEventHandler  [_name,_file];
 	};
 } forEach (configProperties [missionConfigFile >> "gamemode" >> "playerEventHandler"]);

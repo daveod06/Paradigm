@@ -32,7 +32,7 @@ params ["_target_scope"];
 			} forEach _files;
 			private _id = addMissionEventHandler [_name,_cmd];
 		} else {
-			private _fileName = format["eventhandlers\mission\eh_%1.sqf",_name];
+			private _fileName = format["coreFunctions\eventhandlers\mission\eh_%1.sqf",_name];
 			private _file = preprocessFile _fileName;
 			["Adding mission event handler: %1 with file %2", _name, _fileName] call BIS_fnc_logFormat;
 			private _id = addMissionEventHandler [_name,_file];
