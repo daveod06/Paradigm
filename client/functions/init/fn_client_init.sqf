@@ -28,9 +28,9 @@ addMissionEventHandler ["PreloadFinished", {
 //Spawn it so we don't block player loading by holding up postInit.
 [] spawn {
 	diag_log "Paradigm: Client init started";
-	private _fnc_preload = compile preprocessFile "para_player_preload_client.sqf";
-	private _fnc_loaded = compile preprocessFile "para_player_loaded_client.sqf";
-	private _fnc_initClient = compile preprocessFile "para_player_init_client.sqf";
+	private _fnc_preload = compile preprocessFile "coreFunctions\para_player_preload_client.sqf";
+	private _fnc_loaded = compile preprocessFile "coreFunctions\para_player_loaded_client.sqf";
+	private _fnc_initClient = compile preprocessFile "coreFunctions\para_player_init_client.sqf";
 
 	waitUntil {!isNull findDisplay 46 || !hasInterface};
 

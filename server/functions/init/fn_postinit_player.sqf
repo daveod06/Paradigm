@@ -30,6 +30,6 @@ if (!_checkHC) then {
 	};
 };
 
-private _fnc_playerPostInitServer = compile preprocessFile "para_player_postinit_server.sqf";
+private _fnc_playerPostInitServer = compile preprocessFile "coreFunctions\para_player_postinit_server.sqf";
 
 [_player, didJIP] call _fnc_playerPostInitServer;

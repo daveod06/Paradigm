@@ -45,5 +45,5 @@ class CfgNotifications
 
 class CfgRespawnTemplates
 {
-	#include "global\coreFunctions\config\respawn_templates\MenuPosition.inc"
+	#include "global\config\respawn_templates\MenuPosition.inc"
 };

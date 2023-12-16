@@ -27,7 +27,7 @@ if (!_checkHC && {_owner == 0 || owner _player == 0 || owner _player != remoteEx
 		diag_log format ["Paradigm: Aborting player init, as player object is unowned - %1", _player];
 	};
 
-private _fnc_playerInitServer = compile preprocessFile "para_player_init_server.sqf";
+private _fnc_playerInitServer = compile preprocessFile "coreFunctions\para_player_init_server.sqf";
 [_player, didJIP] call _fnc_playerInitServer;
 
 private _playerDisconnected = (owner _player != remoteExecutedOwner);
