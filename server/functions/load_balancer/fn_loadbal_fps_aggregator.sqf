@@ -16,7 +16,7 @@
 
 // use HC or clients
 private _allHeadlessClients = entities "HeadlessClient_F";
-private _allPlayers = allPlayers - _allHeadlessClients;
+//private _allPlayers = allPlayers - _allHeadlessClients;
 
 private _allHeadlessClientsWeighted = flatten (_allHeadlessClients apply {
 	[
@@ -32,6 +32,7 @@ private _allHeadlessClientsWeighted = flatten (_allHeadlessClients apply {
 	]
 });
 
+/*
 private _allPlayersWeighted = flatten (_allPlayers apply {
 	[
 		owner _x, 
@@ -45,7 +46,8 @@ private _allPlayersWeighted = flatten (_allPlayers apply {
 		]
 	]
 });
+*/
 
 // update arrays
 missionNamespace setVariable ["para_s_loadbal_hc_weighted",_allHeadlessClientsWeighted];
-missionNamespace setVariable ["para_s_loadbal_players_weighted",_allPlayersWeighted];
+//missionNamespace setVariable ["para_s_loadbal_players_weighted",_allPlayersWeighted];

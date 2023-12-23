@@ -16,14 +16,14 @@
 
 params [["_params", createHashMap]];
 
-para_s_cleanup_minPlayerDistance = _params getOrDefault ["minPlayerDistance", 400];
+para_s_cleanup_minPlayerDistance = _params getOrDefault ["minPlayerDistance", 2000];
 para_s_cleanup_max_bodies = _params getOrDefault ["maxBodies", 50];
 // Remove items placed on the ground by players
 para_s_cleanup_clean_placed_gear = _params getOrDefault ["cleanPlacedGear", true];
-para_s_cleanup_placed_gear_cleanup_time = _params getOrDefault ["placedGearCleanupTime", 300];
+para_s_cleanup_placed_gear_cleanup_time = _params getOrDefault ["placedGearCleanupTime", 600];
 // Remove items dropped by players or AI dying
 para_s_cleanup_clean_dropped_gear = _params getOrDefault ["cleanDroppedGear", true];
-para_s_cleanup_dropped_gear_cleanup_time = _params getOrDefault ["droppedGearCleanupTime", 300];
+para_s_cleanup_dropped_gear_cleanup_time = _params getOrDefault ["droppedGearCleanupTime", 1200];
 
 para_s_cleanup_items_delete_immediately = [];
 

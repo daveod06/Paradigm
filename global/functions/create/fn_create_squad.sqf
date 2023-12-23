@@ -22,7 +22,7 @@ params [["_units", []], "_groupTarget", "_position"];
 
 private _group = _groupTarget;
 
-if (typeName _groupTarget == "SIDE") then {
+if (_groupTarget isEqualType east) then {
 	_group = [_groupTarget, true] call para_g_fnc_create_group;
 };
 

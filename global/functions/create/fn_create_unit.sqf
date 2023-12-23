@@ -20,6 +20,8 @@ params ["_group", "_class", "_position", "_markers", "_placement", "_special"];
 
 private _unit = _group createUnit [_class, _position, _markers, _placement, _special];
 
+//if (!local _unit) exitWith {_this remoteExecCall ["para_g_fnc_create_unit",_unit]};
+
 _unit setVariable ["sideAtCreation", side _group, true];
 
 //Configure unit skills. These are tuned for infantry jungle-fighting, and may not work as well on vehicle crews.
