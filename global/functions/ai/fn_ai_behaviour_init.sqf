@@ -1,5 +1,5 @@
 /*
-	File: fnai_behaviour_init.sqf
+	File: fn_ai_behaviour_init.sqf
 	Author:  Savage Game Design
 	Public: No
 	
