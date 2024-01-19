@@ -40,13 +40,17 @@ para_s_cleanup_items_time_check = [];
 ["cleanup", {call para_s_fnc_cleanup_job}, [], 5] call para_g_fnc_scheduler_add_job;
 
 if (para_s_cleanup_clean_dropped_gear) then {
-	addMissionEventHandler ["EntityKilled", {
-		params ["_unit"];
+	addMissionEventHandler [
+		"EntityKilled",
+		{
+			params ["_unit"];
 
-		if (_unit isKindOf "CAManBase") then {
-			para_s_cleanup_items_bodies pushBack _unit;
-			private _weaponHolders = _unit nearEntities ["WeaponHolderSimulated", 5];
-			[_weaponHolders, false, para_s_cleanup_dropped_gear_cleanup_time] call para_s_fnc_cleanup_add_items;
-		};
-	}];
+			if (_unit isKindOf "CAManBase") then
+			{
+				para_s_cleanup_items_bodies pushBack _unit;
+				private _weaponHolders = _unit nearEntities ["WeaponHolderSimulated", 5];
+				[_weaponHolders, false, para_s_cleanup_dropped_gear_cleanup_time] call para_s_fnc_cleanup_add_items;
+			};
+		}
+	];
 };
