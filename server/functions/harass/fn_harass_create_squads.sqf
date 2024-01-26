@@ -17,7 +17,7 @@
 */
 {
 	private _side = _x;
-	private _enemySides = [west, east, independent, civilian] select {_x getFriend _side < 0.6};
+	private _enemySides = [west, east, resistance, civilian] select {_x getFriend _side < 0.6};
 	private _friendlyPlayers = playableUnits select {side group _x == _side};
 	private _enemyUnits = allUnits select {alive _x && (side group _x in _enemySides)};
     private _harassTraitSet = false;
@@ -32,7 +32,7 @@
 		//!(Player is in a vehicle and travelling over 29 km/h) - Don't harass moving vehicles.
 		&& !(vehicle _player != _player && (canMove vehicle _player))
 		//Player is on a combat side.
-		&& side group _player in [west, east, independent]
+		&& side group _player in [west, east, resistance]
 		//Player has harrass flag set as true
 		&& (_player getUnitTrait "harassable")
 	};
@@ -146,6 +146,6 @@
 
 		_friendlyPlayersToHarass = _friendlyPlayersToHarass - _nearbyPlayers;
 	};
-} forEach [west, east, independent];
+} forEach [west, east, resistance];
 
 //["Finished harassing players"] call BIS_fnc_logFormat;
