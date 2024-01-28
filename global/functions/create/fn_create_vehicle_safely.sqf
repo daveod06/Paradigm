@@ -57,13 +57,15 @@ for "_i" from 1 to _attempts do {
 	if (_finished) exitWith {};
 };
 
-if (_willCollide && _force) then {
+if (_willCollide && _force) then
+{
 	_spawnPosition = [_spawnPosition, _pos] select (_spawnPosition isEqualTo []);
 	_willCollide = false;
 };
 
 
-if !(_willCollide) exitWith {
+if !(_willCollide) exitWith
+{
 	_vehicle setPosASL AGLtoASL _spawnPosition;
 	_vehicle enableSimulation true;
 
