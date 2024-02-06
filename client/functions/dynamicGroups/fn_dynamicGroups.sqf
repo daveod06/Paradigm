@@ -246,7 +246,7 @@ switch (_mode) do
         private ["_group"];
         _group = _params param [0, grpNull, [grpNull]];
 
-        if (local _group) then
+        if ((local (leader _group))) then
         {
             ["DeleteGroupLocal", [_group]] call GROUPS;
         }
@@ -262,7 +262,7 @@ switch (_mode) do
         private ["_group"];
         _group = _params param [0, grpNull, [grpNull]];
 
-        if (!isNull _group && {local _group}) then
+        if (!isNull _group && {(local (leader _group))}) then
         {
             deleteGroup _group;
         };
