@@ -194,11 +194,19 @@ _ctrlB ctrlSetPosition
 #define COLOR_KEYBINDINGS_DOUBLEBIND_SELECTED [1,0,0,1]
 #define COLOR_KEYBINDINGS_DOUBLEBIND_UNSELECTED [1,0,0,0.5]
 
+
 //Text stuff:
-#define USEDFONT "tt2020base_vn"
-#define USEDFONT_B "tt2020base_vn_bold"
-#define USEDFONT_ALT "tt2020style_e_vn"
-#define USEDFONT_ALT_B "tt2020style_e_vn_bold"
+#if __has_include("\vn\vn_versioning\scripts\vn_version.inc")
+    #define USEDFONT "tt2020base_vn"
+    #define USEDFONT_B "tt2020base_vn_bold"
+    #define USEDFONT_ALT "tt2020style_e_vn"
+    #define USEDFONT_ALT_B "tt2020style_e_vn_bold"
+#else
+    #define USEDFONT "EtelkaMonospacePro"
+    #define USEDFONT_B "EtelkaMonospaceProBold"
+    #define USEDFONT_ALT "EtelkaNarrowMediumPro"
+    #define USEDFONT_ALT_B "EtelkaNarrowMediumPro"
+#endif
 
 #define CALCRESANDAR	UIY_CALC_A
 #define TXT_CST(NUM)	(UIY_CALC_A * NUM)

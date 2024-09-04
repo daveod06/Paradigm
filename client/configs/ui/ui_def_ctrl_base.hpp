@@ -1202,10 +1202,10 @@ class para_RscCheckBox
 	deletable = 0;
 	style = 0;
 	checked = 0;
-    x = 0;
-    y = 0;
-    w = UIW(1);
-    h = UIH(1);
+	x = 0;
+	y = 0;
+	w = UIW(1);
+	h = UIH(1);
 	color[]={0.1,0.1,0.1,0.9};
 	colorFocused[]={0.1,0.1,0.1,0.9};
 	colorHover[]={0.1,0.1,0.1,0.9};
@@ -1443,7 +1443,11 @@ class para_loadingScreen
 		{
 			idc = 5002;
 			style = 48 + 0x800;
-			text="\vn\objects_f_vietnam\civ\signs\data\billboards\vn_ui_billboard_01_ca.paa";
+			#if __has_include("\vn\vn_versioning\scripts\vn_version.inc")
+				text="\vn\objects_f_vietnam\civ\signs\data\billboards\vn_ui_billboard_01_ca.paa";
+			#else
+				text="";
+			#endif
 			colorText[] = {1,1,1,0.8};
 			x = "safezoneX";
 			y = "safezoneY";
@@ -1454,8 +1458,8 @@ class para_loadingScreen
 };
 class para_RscTree
 {
-    idc = -1;
-    deletable = 0;
+	idc = -1;
+	deletable = 0;
 	fade = 0;
 	access = 0;
 	type = CT_TREE;

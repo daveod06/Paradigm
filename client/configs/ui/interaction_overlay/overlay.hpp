@@ -309,7 +309,11 @@ class para_InteractionOverlay_state
 			w = UIH(PARA_IO_STATE_ICON_SIZE) * (3 / 4);
 			h = UIH(PARA_IO_STATE_ICON_SIZE);
 			colorText[] = { 1, 1, 1, 0.5 };
-			text = "\vn\ui_f_vietnam\ui\interactionOverlay\hud-on.paa";
+			#if __has_include("\vn\vn_versioning\scripts\vn_version.inc")
+				text = "\vn\ui_f_vietnam\ui\interactionOverlay\hud-on.paa";
+			#else
+				text="";
+			#endif
 			onLoad = "uiNamespace setVariable ['#para_InteractionOverlay_state_Icon', (_this#0)];";
 		};
 	};
