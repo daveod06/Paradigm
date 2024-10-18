@@ -16,14 +16,14 @@
 
 params [["_params", createHashMap]];
 
-para_s_cleanup_minPlayerDistance = _params getOrDefault ["minPlayerDistance", 2000];
-para_s_cleanup_max_bodies = _params getOrDefault ["maxBodies", 50];
+para_s_cleanup_minPlayerDistance = _params getOrDefault ["minPlayerDistance", 200];
+para_s_cleanup_max_bodies = _params getOrDefault ["maxBodies", 30];
 // Remove items placed on the ground by players
 para_s_cleanup_clean_placed_gear = _params getOrDefault ["cleanPlacedGear", true];
 para_s_cleanup_placed_gear_cleanup_time = _params getOrDefault ["placedGearCleanupTime", 600];
 // Remove items dropped by players or AI dying
 para_s_cleanup_clean_dropped_gear = _params getOrDefault ["cleanDroppedGear", true];
-para_s_cleanup_dropped_gear_cleanup_time = _params getOrDefault ["droppedGearCleanupTime", 1200];
+para_s_cleanup_dropped_gear_cleanup_time = _params getOrDefault ["droppedGearCleanupTime", 600];
 
 para_s_cleanup_items_delete_immediately = [];
 
@@ -39,8 +39,10 @@ para_s_cleanup_items_time_check = [];
 
 ["cleanup", {call para_s_fnc_cleanup_job}, [], 5] call para_g_fnc_scheduler_add_job;
 
-if (para_s_cleanup_clean_dropped_gear) then {
-	addMissionEventHandler [
+if (para_s_cleanup_clean_dropped_gear) then
+{
+	addMissionEventHandler
+	[
 		"EntityKilled",
 		{
 			params ["_unit"];
@@ -53,4 +55,18 @@ if (para_s_cleanup_clean_dropped_gear) then {
 			};
 		}
 	];
+	addMissionEventHandler
+	[
+		"EntityCreated",
+		{
+			params ["_entity"];
+
+			if (_entity isKindOf "Leaflet_05_Base_F") then
+			{
+				[_entity, false, 120] call para_s_fnc_cleanup_add_items;
+			};
+		}
+	];
 };
+
+

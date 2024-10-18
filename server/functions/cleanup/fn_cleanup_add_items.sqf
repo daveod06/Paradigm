@@ -42,4 +42,4 @@ if (_playerRangeRestriction) exitWith {
 	para_s_cleanup_items_range_restricted append _items;
 };
 
-para_s_cleanup_items_delete_immediately append _items;		
+para_s_cleanup_items_delete_immediately append _items;
