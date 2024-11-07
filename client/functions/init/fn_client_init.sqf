@@ -34,6 +34,13 @@ addMissionEventHandler ["PreloadFinished", {
 
 	waitUntil {!isNull findDisplay 46 || !hasInterface};
 
+	if (!hasInterface && {!isDedicated}) then
+	{
+		diag_log "VN MikeForce: Initialising Performance Logging";
+		[] call vn_mf_fnc_init_performance_logging_headless;
+	};
+	
+
 	diag_log "Paradigm: Preload started";
 
 	[] call _fnc_preload;

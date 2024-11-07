@@ -47,7 +47,7 @@ if (para_s_cleanup_clean_dropped_gear) then
 		{
 			params ["_unit"];
 
-			if (_unit isKindOf "CAManBase") then
+			if (_unit isKindOf "CAManBase" && {!(_unit getVariable ["doNotCleanupWeapons",false])}) then
 			{
 				para_s_cleanup_items_bodies pushBack _unit;
 				private _weaponHolders = _unit nearEntities ["WeaponHolderSimulated", 5];
